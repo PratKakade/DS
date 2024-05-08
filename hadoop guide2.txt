@@ -1,0 +1,32 @@
+--make one folder on desktop WordCountFolder and add WordCount.java in it 
+1.check javac and Hadoop version
+
+2.create a new folder in WordCountFolder--> input_data
+
+3.create a new text file in input_data folder-- input.txt
+
+4.add words into it
+
+5.create a new folder in WordCountFolder--> classes
+
+6.run the following on terminal
+  export HADOOP_CLASSPATH=$(Hadoop classpath)
+  echo HADOOP_CLASSPATH
+
+7.hadoop fd -mkdir /WordCountFolder
+
+8.hadoop fd -mkdir /WordCountFolder/Input
+
+9.check it on localhost
+
+10.hadoop fd -put '<path of input.txt(/home/ubuntu/Desktop/WordCountFolder/input_data/input.txt)>' /WordCountFolder/Input
+
+11.cd /home/ubuntu/Desktop/WordCountFolder
+
+12.javac -classpath ${HADOOP_CLASSPATH} -d '<path of classes folder(/home/ubuntu/Desktop/WordCountFolder/classes)>' '<path of woedcount.java(/home/ubuntu/Desktop/WordCountFolder/WordCount.java)>'
+
+13.jar -cvf first.jar -c classes/ .
+
+14.hadoop jar '<path of jar file>' WordCOunt /WordCountFolder/Input /WordCountFolder/Output
+
+15.hadoop dfs -cat <hdfs output directory(/WordCountFolder/Output)>/*

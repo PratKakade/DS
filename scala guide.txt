@@ -1,0 +1,38 @@
+How to download Apache Spark
+
+
+1. java -version
+
+2.sudo apt-get install default-jdk
+
+3.sudo apt-get install scala
+
+4.create a folder in home directory named "spark"
+
+5.cd spark
+
+6.search on google "apache spark download"
+
+7.Download it and copy the file , paste in spark folder.
+
+8.tar -xvf <file_name>
+
+9.gedit ~/.bashrc
+
+10. SPARK_HOME=/home/<username>/<file_name>
+    export PATH=$PATH:$SPARK_HOME/bin:$PATH:$SPARK_HOME/sbin
+
+to get username, type "whoami" on the new window of terminal. Replace file name and username
+
+11. save and close
+
+12.source ~/.bashrc
+
+13.spark-shell
+
+14.ctrl+c
+
+save first.scala program into the spark folder
+open terminal and run following command
+ scalac first.scala
+ scala Ex        //Ex is object in first.scala file.
